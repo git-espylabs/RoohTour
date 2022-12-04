@@ -276,9 +276,8 @@ class ShopDetailsFragment :
                     }
 
                 }
+                dialog.dismiss()
             }
-
-
         }
 
         edt_date_of_travel.setOnClickListener {
