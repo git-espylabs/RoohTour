@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="16dp"
+        android:elevation="7dp"
+        app:contentPadding="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/dot"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:text="Date of travel"
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/destiny"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="Destination "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvComt"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="Comment: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/destiny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvAdultCount"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="No Of Adults: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvComt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvAChildCount"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@+id/tvAdultCount"
+                android:textColor="@color/black"
+                android:text="No Of Children: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvComt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvDuration"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="Duration: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvAdultCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvQuotation"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="Quotation amount: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvReminder"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="Reminder Date: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvQuotation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvReceiveDate"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="Receive Date: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvReminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvNotes"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="Notes: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvReceiveDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnFollowup"
+                android:layout_width="0dp"
+                android:layout_height="39dp"
+                android:background="@drawable/bg_simple_text_bg_orange_fill"
+                android:fontFamily="@font/avenir_medium"
+                android:text="Follow Up"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_marginTop="9dp"
+                android:layout_marginHorizontal="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvNotes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

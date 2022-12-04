@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/carLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
+            android:background="@drawable/bg_orange_border_white_filled_curver_corner_rect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivItemIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/ic_shop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvItemTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Punch In Now"
+                android:layout_marginLeft="12dp"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintStart_toEndOf="@+id/ivItemIcon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/arrow1"/>
+
+            <TextView
+                android:id="@+id/tvItemDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Mark your attendance"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintStart_toEndOf="@+id/ivItemIcon"
+                app:layout_constraintTop_toBottomOf="@+id/tvItemTitle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/arrow1"/>
+
+            <ImageView
+                android:id="@+id/arrow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_arrow_right_grey"
+                android:layout_marginRight="8dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

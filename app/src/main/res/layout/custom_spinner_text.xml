@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text1"
+    style="@style/spinnerDropDownItemStyle"
+    android:maxLines="1"
+    android:fontFamily="@font/avenir_oblique"
+    android:textColor="@color/black"
+    android:textSize="14sp"
+    android:layout_width="match_parent"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp"
+    android:paddingTop="9dp"
+    android:paddingBottom="9dp"
+    android:layout_height="wrap_content"
+    android:ellipsize="end" />

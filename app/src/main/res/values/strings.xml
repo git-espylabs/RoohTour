@@ -1,0 +1,117 @@
+<resources>
+    <string name="app_name">ROOH Tourism</string>
+    <string name="punch_in_now">Punch In Now</string>
+    <string name="mark_attendance">Mark your attendance</string>v
+    <string name="sync_all_data">Sync all data</string>
+    <string name="update_route_prompt">Update your routes and Agencies</string>
+    <string name="add_expense">Add Expenses</string>
+    <string name="add_daily_expense">Add your daily expenses</string>
+    <string name="welcome">Welcome back</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="login_now">Log In Now</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="show">Show</string>
+    <string name="signup_prompt">Don\'t have any account,</string>
+    <string name="signup">Sign up</string>
+    <string name="capture_image_prompt">Upload your image / Take a selfie</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="mark_attendance_prompt">Mark your today’s Attendance</string>
+    <string name="punchin">Punch In</string>
+    <string name="punchout">Punch Out</string>
+    <string name="attendance">Attendance</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="choose_photo">Choose Photo</string>
+    <string name="no_apps_found">No apps found to perform this action.</string>
+    <string name="shops">Agencies</string>
+    <string name="products">Products</string>
+    <string name="type_of_expense">Type of Expense</string>
+    <string name="descrition">Description</string>
+    <string name="remarks">Remarks</string>
+    <string name="submit">Submit</string>
+    <string name="exit_tap_alert">Click BACK again to exit</string>
+    <string name="take_order">Take Order</string>
+    <string name="Rs">\u20B9</string>
+    <string name="pay_collection">Pay Collection</string>
+    <string name="add_sales_return">Add Sales Return</string>
+    <string name="shop_details">Agency Details</string>
+    <string name="amount_rep_float">\u20B9  %1$.2f</string>
+    <string name="amount_rep_int">\u20B9  %1$d</string>
+    <string name="feedback">Feedback</string>
+    <string name="title">Title</string>
+    <string name="sales_return">Sales Return</string>
+    <string name="purchase_order_num">Purchase Order Number</string>
+    <string name="purchase_order">Purchase Order</string>
+    <string name="return_qty">Return Qty</string>
+    <string name="paymode">Payment Mode</string>
+    <string name="search_product">Search Product</string>
+    <string name="continuee">Continue</string>
+    <string name="place_order_now">Place Order Now</string>
+    <string name="order">Create Order</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="order_uploaded">Order placed successfully!</string>
+    <string name="order_failed">Failed to place Order! Please try again later.</string>
+    <string name="confirm_place_order">Confirm placing order?</string>
+    <string name="feedback_submitted">Feedback Submitted. Thanks!</string>
+    <string name="something_went_wrong">OOPS! Something went wrong</string>
+    <string name="shop_in">Agency In</string>
+    <string name="shop_out">Agency Out</string>
+    <string name="apply_leave">Apply Leave</string>
+    <string name="reason">Reason</string>
+    <string name="profile">Profile</string>
+    <string name="already_shopin_warning">You are already Login In another Agency. Please Agency Out to continue.</string>
+    <string name="sync_now">Sync Now</string>
+    <string name="sync_routes">Sync with latest routes</string>
+    <string name="sync_shops">Sync new agency data</string>
+    <string name="sync_products">Sync new products</string>
+    <string name="permission_required_text">Requires Location Permission</string>
+    <string name="sync_complete_no_products">No products available at this time!</string>
+    <string name="sync_complete_products">Products Sync completed successfully!</string>
+    <string name="sync_complete_no_shops">No agencies available at this time!</string>
+    <string name="sync_complete_shops">Agencies Sync completed successfully!</string>
+    <string name="no_shops_found">No Agency found! Try syncing shops again.</string>
+    <string name="leave_apply_success">Leave applies successfully!</string>
+    <string name="add_shop">Add New Agency</string>
+    <string name="order_history">Enquiries</string>
+    <string name="shop_Lat">Lat: %1$.7f</string>
+    <string name="shop_Lon">Lon: %1$.7f</string>
+    <string name="add_new_shop">Create and upload a new Agency</string>
+    <string name="order_history_desc">View Enquiries you have taken and Follow Up it</string>
+    <string name="location_disabled">GPS not available!\nYour GPS is either not available or set to a low accuracy.
+        Please ensure GPS settings enabled with high accuracy and try again for better results.\n
+    </string>
+    <string name="storage_permission_warn">Please allow location permission to continue further</string>
+    <string name="permission_storage_required_text">Requires Storage Permission</string>
+    <string name="alert_location_off">Your GPS seems to be disabled/OFF or having a low accuracy access, please enable location with high priority settings and try again.</string>
+
+    <string name="today_my_orders">Today My Orders</string>
+    <string name="shop_collection_history">Payment History</string>
+    <string name="enquiry_agency_list">Enquiry Agency List</string>
+    <string name="add_enquiry">Add Enquiry</string>
+
+    <string-array name="expense_types">
+        <item>Food</item>
+        <item>Travel</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="pay_types">
+        <item>Cash</item>
+        <item>Cheque</item>
+    </string-array>
+
+    <string-array name="route_names">
+        <item>Select Route</item>
+        <item>Test 1</item>
+        <item>Test 2</item>
+    </string-array>
+
+    <string-array name="category_names">
+        <item>Select Category</item>
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>Direct Customer</item>
+
+    </string-array>
+</resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.espy.roohtour.ui.home.HomeViewModel" />
+
+        <variable
+            name="viewParent"
+            type="com.espy.roohtour.ui.home.HomeFragment" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/card1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            layout="@layout/item_home_card"
+            android:layout_width="0dp"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="24dp" />
+
+        <include
+            android:id="@+id/card2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            layout="@layout/item_home_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card1"
+            android:layout_marginTop="24dp" />
+
+<!--        <include-->
+<!--            android:id="@+id/card3"-->
+<!--            android:visibility="gone"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            layout="@layout/item_home_card"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="@{(view) -> viewParent.onClick(view)}"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/card2"-->
+<!--            android:layout_marginTop="24dp" />-->
+
+        <include
+            android:id="@+id/card4"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            layout="@layout/item_home_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card2"
+            android:layout_marginTop="24dp" />
+
+
+        <include
+            android:id="@+id/card5"
+            layout="@layout/item_home_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="20dp"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card4" />
+
+        <TextView
+            android:id="@+id/tvVersion"
+            android:layout_marginBottom="12dp"
+            android:text="v1.0"
+            android:textColor="@color/black"
+            android:fontFamily="@font/avenir_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

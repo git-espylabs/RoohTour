@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.espy.roohtour.ui.order.view.OrderViewModel" />
+
+        <variable
+            name="viewParent"
+            type="com.espy.roohtour.ui.order.view.CreateOrderFragment" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+     <AutoCompleteTextView
+         android:id="@+id/etSearch"
+         app:layout_constraintTop_toTopOf="parent"
+         android:layout_marginTop="24dp"
+         android:layout_marginLeft="16dp"
+         android:layout_marginRight="16dp"
+         android:hint="@string/search_product"
+         android:paddingLeft="7dp"
+         android:paddingRight="7dp"
+         android:textSize="14sp"
+         android:textColor="@color/black"
+         android:fontFamily="@font/avenir_light"
+         android:background="@drawable/bg_edittext"
+         android:layout_width="match_parent"
+         android:layout_height="49dp"/>
+
+        <ImageView
+            android:id="@+id/iconsearch"
+            app:layout_constraintTop_toTopOf="@+id/etSearch"
+            app:layout_constraintBottom_toBottomOf="@+id/etSearch"
+            app:layout_constraintStart_toStartOf="@+id/etSearch"
+            app:layout_constraintEnd_toEndOf="@+id/etSearch"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginRight="16dp"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            android:src="@drawable/ic_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnContinue"
+            style="@style/EspyButtonStyle"
+            android:background="@drawable/bg_cap_button"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="18dp"
+            android:padding="14dp"
+            android:textSize="15sp"
+            android:text="@string/continuee"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            android:fontFamily="@font/avenir_medium"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintTop_toBottomOf="@+id/etSearch"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orderProductList"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/etSearch"
+            app:layout_constraintBottom_toTopOf="@+id/btnContinue"
+            android:layout_width="match_parent"
+            tools:listitem="@layout/row_item_order_product_list"
+            android:layout_height="0dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

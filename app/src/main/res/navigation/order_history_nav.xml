@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_history_nav_graph"
+    app:startDestination="@id/deliveryShopFragment">
+
+    <fragment
+        android:id="@+id/deliveryShopFragment"
+        android:name="com.espy.roohtour.ui.shops.view.DeliveryShopsFragment"
+        android:label="Order History"
+        tools:layout="@layout/fragment_delivery_shops">
+        <action
+            android:id="@+id/action_deliveryShopsFragment_to_pendingOrderFragment"
+            app:destination="@id/pendingOrderFragment">
+        </action>
+        <argument
+            android:name="orderStatus"
+            app:argType="string"
+            android:defaultValue="1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pendingOrderFragment"
+        android:name="com.espy.roohtour.ui.shops.view.PendingOrdersFragment"
+        android:label="Orders"
+        tools:layout="@layout/fragment_pending_orders">
+        <action
+            android:id="@+id/action_pendingOrderFragment_to_settleOrderFragment"
+            app:destination="@id/settleOrderFragment">
+        </action>
+        <argument
+            android:name="deliveryShop"
+            app:argType="com.espy.roohtour.api.models.shops.EnquiryAgencyItem"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settleOrderFragment"
+        android:name="com.espy.roohtour.ui.shops.view.SettleOrderFragment"
+        android:label="Orders"
+        tools:layout="@layout/fragment_setle_order">
+        <argument
+            android:name="pendingorder"
+            app:argType="com.espy.roohtour.api.models.shops.PendingOrder"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="deliveryShop"
+            app:argType="com.espy.roohtour.api.models.shops.EnquiryAgencyItem"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shop_nav_graph"
+    app:startDestination="@id/shopDetailsFragment">
+
+    <fragment
+        android:id="@+id/shopDetailsFragment"
+        android:name="com.espy.roohtour.ui.shops.view.ShopDetailsFragment"
+        android:label="Shop"
+        tools:layout="@layout/fragmet_shop_details">
+
+        <argument android:name="shop"
+            app:argType="com.espy.roohtour.api.models.shops.Shop"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_shopDetailsFragment_to_shopCollectionHistoryFragment"
+            app:destination="@id/shopCollectionHistoryFragment">
+        </action>
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/shopCollectionHistoryFragment"
+        android:name="com.espy.roohtour.ui.shops.view.ShopCollectionHistoryFragment"
+        android:label="Payment History"
+        tools:layout="@layout/fragment_shop_collection_history">
+    </fragment>
+</navigation>

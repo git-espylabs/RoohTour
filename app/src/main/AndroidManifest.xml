@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.espy.roohtour">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.PICK" />
+        </intent>
+    </queries>
+
+    <application
+        android:name="com.espy.roohtour.app.App"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_rooh"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher_rooh"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Roohtour"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.espy.roohtour.ui.shops.view.OrderHistoryActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.espy.roohtour.ui.shops.view.AddNewShopActivty"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.espy.roohtour.ui.products.view.ProductDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.espy.roohtour.ui.sync.view.SyncActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.espy.roohtour.ui.profile.view.ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.espy.roohtour.ui.order.view.OrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.espy.roohtour.ui.splash.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.espy.roohtour.ui.attendance.view.AttendanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.espy.roohtour.ui.profile.view.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.espy.roohtour.ui.home.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.espy.roohtour.ui.shops.view.ShopDetailsActivity"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

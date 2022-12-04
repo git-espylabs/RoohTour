@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="16dp"
+        android:elevation="7dp"
+        app:contentPadding="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/shName"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="Nandilath G Mart"
+                android:fontFamily="@font/avenir_heavy"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/shRoute"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="18dp"
+                android:gravity="center|left"
+                app:layout_constraintHorizontal_bias="0.0"
+                android:textColor="@color/black"
+                tools:text="Route: thriprayar-muttichur-perumbillissery-cherpu"
+                android:drawablePadding="5dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/avenir_oblique"
+                app:layout_constraintTop_toBottomOf="@+id/shName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/shAddress"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="18dp"
+                android:gravity="center|left"
+                app:layout_constraintHorizontal_bias="0.0"
+                android:textColor="@color/black"
+                tools:text="Address: "
+                android:ellipsize="end"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/avenir_oblique"
+                app:layout_constraintTop_toBottomOf="@+id/shRoute"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/shLoc"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#1F3FEC"
+                tools:text="lat: 10.4743, lon: 76.1064145"
+                android:drawableLeft="@drawable/ic_location_small"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/avenir_oblique"
+                app:layout_constraintTop_toBottomOf="@+id/shAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/go"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                android:src="@drawable/ic_arrow_right_grey"
+                android:layout_width="18dp"
+                android:layout_height="18dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

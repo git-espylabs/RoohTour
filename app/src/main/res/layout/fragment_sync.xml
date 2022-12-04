@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewParent"
+            type="com.espy.roohtour.ui.sync.view.SyncFragment" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnSync1"
+            android:visibility="gone"
+            android:textColor="@color/app_accent_color"
+            android:background="@drawable/bg_orange_border_white_filled_curver_corner_rect"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/sync_now"
+            android:fontFamily="@font/avenir_medium"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            android:textSize="17sp"
+            android:padding="12dp"
+            android:textAllCaps="false"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@+id/btnSync1"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSync1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnSync1"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/avenir_roman"
+            android:textSize="16sp"
+            android:text="@string/sync_routes"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/sep1"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/btnSync1"
+            android:layout_marginTop="24sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/grey_50"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <Button
+            android:id="@+id/btnSync2"
+            android:textColor="@color/app_accent_color"
+            android:background="@drawable/bg_orange_border_white_filled_curver_corner_rect"
+            app:layout_constraintTop_toBottomOf="@+id/sep1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/sync_now"
+            android:fontFamily="@font/avenir_medium"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            android:textSize="17sp"
+            android:padding="12dp"
+            android:textAllCaps="false"
+
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv2"
+            app:layout_constraintTop_toTopOf="@+id/btnSync2"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSync2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnSync2"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/avenir_medium"
+            android:textSize="16sp"
+            android:text="@string/sync_shops"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/shpCount"
+            app:layout_constraintTop_toBottomOf="@+id/tv2"
+            app:layout_constraintStart_toStartOf="@+id/tv2"
+            android:layout_marginTop="7dp"
+            android:text="0 Agency Dowloaded"
+            android:fontFamily="@font/avenir_oblique"
+            android:textColor="#605E5E"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/sep2"
+            app:layout_constraintTop_toBottomOf="@+id/btnSync2"
+            android:layout_marginTop="24sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/grey_50"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="1dp"/>
+
+        <Button
+            android:id="@+id/btnSync3"
+            android:textColor="@color/app_accent_color"
+            android:background="@drawable/bg_orange_border_white_filled_curver_corner_rect"
+            app:layout_constraintTop_toBottomOf="@+id/sep2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/sync_now"
+            android:fontFamily="@font/avenir_medium"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            android:textSize="17sp"
+            android:padding="12dp"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv3"
+            app:layout_constraintTop_toTopOf="@+id/btnSync3"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSync3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnSync3"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/avenir_medium"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:text="@string/sync_products"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/pdtCount"
+            app:layout_constraintTop_toBottomOf="@+id/tv3"
+            app:layout_constraintStart_toStartOf="@+id/tv3"
+            android:layout_marginTop="7dp"
+            android:text="0 Products Dowloaded"
+            android:fontFamily="@font/avenir_oblique"
+            android:textColor="#605E5E"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/sep4"
+            app:layout_constraintTop_toBottomOf="@+id/btnSync3"
+            android:layout_marginTop="24sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/grey_50"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="1dp"/>
+
+        <Button
+            android:id="@+id/btnSync4"
+            android:textColor="@color/app_accent_color"
+            android:background="@drawable/bg_orange_border_white_filled_curver_corner_rect"
+            app:layout_constraintTop_toBottomOf="@+id/sep4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/sync_now"
+            android:fontFamily="@font/avenir_medium"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            android:textSize="17sp"
+            android:padding="12dp"
+            android:visibility="gone"
+            android:textAllCaps="false"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv4"
+            app:layout_constraintTop_toTopOf="@+id/btnSync4"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSync4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnSync4"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/avenir_medium"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:text="Sync Product Images"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/pdtImgCount"
+            app:layout_constraintTop_toBottomOf="@+id/tv4"
+            app:layout_constraintStart_toStartOf="@+id/tv4"
+            android:layout_marginTop="7dp"
+            android:text="0 Products Images Dowloaded"
+            android:fontFamily="@font/avenir_oblique"
+            android:textColor="#605E5E"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/pBar"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/pdtImgCount"
+            app:layout_constraintStart_toStartOf="@+id/tv4"
+            app:layout_constraintEnd_toEndOf="@+id/btnSync4"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressTint="@color/app_accent_color"
+            android:progress="0"
+            android:max="100"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/dwnPerc"
+            app:layout_constraintTop_toBottomOf="@+id/pBar"
+            app:layout_constraintStart_toStartOf="@+id/pBar"
+            app:layout_constraintEnd_toEndOf="@+id/pBar"
+            android:layout_marginTop="3dp"
+            android:text="0%"
+            android:fontFamily="@font/avenir_light"
+            android:textColor="@color/app_accent_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

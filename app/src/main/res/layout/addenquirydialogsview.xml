@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/cl"
+    android:layout_width="match_parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenir_medium"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingVertical="5dp"
+            android:text="Add Enquiry"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:fontFamily="@font/avenir_medium"
+            android:gravity="center"
+            android:paddingVertical="5dp"
+            android:text="X"
+            android:textColor="@color/red100"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/ns"
+    android:layout_width="match_parent"
+    app:layout_constraintTop_toBottomOf="@id/cl"
+    android:layout_margin="8dp"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/edt_destination"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@drawable/bg_edittext"
+            android:fontFamily="@font/avenir_medium"
+            android:gravity="center|left"
+            android:hint="Destination"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:paddingLeft="9dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="visible"
+
+
+            />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/edt_destination"
+            android:id="@+id/edt_date_of_travel"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@drawable/bg_edittext"
+            android:fontFamily="@font/avenir_medium"
+            android:gravity="center|left"
+            android:hint="Date of travel"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:paddingLeft="9dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="visible"
+
+
+            />
+
+        <EditText
+            app:layout_constraintTop_toBottomOf="@+id/edt_date_of_travel"
+            android:id="@+id/edt_comment"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@drawable/bg_edittext"
+            android:fontFamily="@font/avenir_medium"
+            android:gravity="center|left"
+            android:hint="Comment"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:paddingLeft="9dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="visible"
+
+
+            />
+
+        <EditText
+            app:layout_constraintTop_toBottomOf="@+id/edt_comment"
+            android:id="@+id/edt_adult"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_edittext"
+            android:fontFamily="@font/avenir_medium"
+            android:gravity="center|left"
+            android:hint="Adult"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:paddingLeft="9dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="visible"
+
+
+            />
+
+        <EditText
+            app:layout_constraintTop_toBottomOf="@+id/edt_adult"
+            android:id="@+id/edt_child"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@drawable/bg_edittext"
+            android:fontFamily="@font/avenir_medium"
+            android:gravity="center|left"
+            android:hint="Child"
+            android:imeOptions="actionNext"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:paddingLeft="9dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="visible"
+
+
+            />
+
+        <EditText
+            app:layout_constraintTop_toBottomOf="@+id/edt_child"
+            android:id="@+id/edt_duration"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="41dp"
+            android:background="@drawable/bg_edittext"
+            android:fontFamily="@font/avenir_medium"
+            android:gravity="center|left"
+            android:hint="Duration"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:paddingLeft="9dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="visible"
+
+
+            />
+
+        <EditText
+            app:layout_constraintTop_toBottomOf="@+id/edt_duration"
+            android:id="@+id/edt_quotation_amt"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@drawable/bg_edittext"
+            android:fontFamily="@font/avenir_medium"
+            android:gravity="center|left"
+            android:hint="Quotation Amount"
+            android:layout_marginTop="10dp"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:paddingLeft="9dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="visible"
+
+
+            />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/edt_quotation_amt"
+            android:layout_marginTop="10dp"
+            android:id="@+id/edt_reminder_date"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@drawable/bg_edittext"
+            android:fontFamily="@font/avenir_medium"
+            android:gravity="center|left"
+            android:hint="Reminder Date"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:paddingLeft="9dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="visible"
+
+
+            />
+
+        <EditText
+            app:layout_constraintTop_toBottomOf="@+id/edt_reminder_date"
+            android:id="@+id/edt_notes"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edittext"
+            android:fontFamily="@font/avenir_medium"
+            android:gravity="top|left"
+            android:hint="Notes"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:paddingLeft="9dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:maxLines="4"
+            android:lines="4"
+            android:minHeight="100dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="visible"
+
+
+            />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            style="@style/EspyButtonStyle"
+            android:background="@drawable/bg_cap_button"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="15dp"
+            android:padding="14dp"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+
+
+            android:text="Submit"
+            android:fontFamily="@font/avenir_medium"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/edt_notes"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

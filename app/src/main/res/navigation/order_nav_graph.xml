@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_nav_graph"
+    app:startDestination="@id/productPreviewFragment">
+
+    <fragment
+        android:id="@+id/createOrderFragment"
+        android:name="com.espy.roohtour.ui.order.view.CreateOrderFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_create_order">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/productPreviewFragment"
+        android:name="com.espy.roohtour.ui.order.view.ProductsPreviewFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_products_preview">
+        <action
+            android:id="@+id/action_productPreviewFragment_to_productPreviewDetailFragment"
+            app:destination="@id/productPreviewDetailFragment"/>
+        <action
+            android:id="@+id/action_productPreviewFragment_to_orderSummaryFragment"
+            app:destination="@id/orderSummaryFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/orderSummaryFragment"
+        android:name="com.espy.roohtour.ui.order.view.OrderSummaryFragment"
+        android:label="Order Summary"
+        tools:layout="@layout/fragment_order_summary">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/productPreviewDetailFragment"
+        android:name="com.espy.roohtour.ui.order.view.ProductPreviewDetailFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_product_preview_detail">
+        <argument
+            android:name="pdt"
+            app:argType="com.espy.roohtour.api.models.products.Product"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
+    </fragment>
+
+</navigation>

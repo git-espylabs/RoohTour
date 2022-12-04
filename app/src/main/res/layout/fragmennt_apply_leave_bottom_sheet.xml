@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/apply_leave"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:fontFamily="@font/avenir_heavy"
+                app:layout_constraintVertical_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnClose"/>
+
+            <ImageView
+                android:id="@+id/btnClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close"
+                android:layout_marginRight="16dp"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toTopOf="@+id/tvTitle"
+                app:layout_constraintStart_toEndOf="@+id/tvTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/promptDate"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Date"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/etDate"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:gravity="left|center"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_light"
+                android:padding="7dp"
+                tools:text="25 June 2020"
+                android:hint="25 June 2020"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_edittext"
+                app:layout_constraintTop_toBottomOf="@+id/promptDate"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:id="@+id/promptReason"
+                app:layout_constraintTop_toBottomOf="@+id/etDate"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/reason"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/etDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="5"
+                android:maxLines="5"
+                android:layout_marginTop="10dp"
+                android:gravity="left|top"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_light"
+                android:padding="7dp"
+                android:imeOptions="actionDone"
+                android:background="@drawable/bg_edittext"
+                app:layout_constraintTop_toBottomOf="@+id/promptReason"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:id="@+id/promptRemarks"
+                app:layout_constraintTop_toBottomOf="@+id/etDesc"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/remarks"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/etRemarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="5"
+                android:maxLines="5"
+                android:layout_marginTop="10dp"
+                android:gravity="left|top"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_light"
+                android:padding="7dp"
+                android:imeOptions="actionDone"
+                android:background="@drawable/bg_edittext"
+                app:layout_constraintTop_toBottomOf="@+id/promptRemarks"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <Button
+                android:id="@+id/btnSubmit"
+                style="@style/EspyButtonStyle"
+                android:background="@drawable/bg_cap_button"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="24dp"
+                android:padding="14dp"
+                android:textSize="15sp"
+                android:text="@string/submit"
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/etRemarks"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

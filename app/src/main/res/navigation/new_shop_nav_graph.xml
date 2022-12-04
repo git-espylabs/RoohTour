@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/new_shop_nav_graph"
+    app:startDestination="@id/addNewFragment">
+
+    <fragment
+        android:id="@+id/addNewFragment"
+        android:name="com.espy.roohtour.ui.shops.view.AddShopFragment"
+        android:label="Add New Agency"
+        tools:layout="@layout/fragment_add_shop">
+    </fragment>
+
+</navigation>

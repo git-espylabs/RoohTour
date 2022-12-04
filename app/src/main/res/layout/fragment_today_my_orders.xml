@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.espy.roohtour.ui.home.HomeViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <TextView
+            android:id="@+id/tvPdtName"
+            android:text="Product"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/avenir_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/g1"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            android:layout_marginRight="24dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g1"
+            app:layout_constraintGuide_percent="0.80"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvPdtCount"
+            android:text="Quantity"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/avenir_medium"
+            app:layout_constraintTop_toTopOf="@+id/tvPdtName"
+            app:layout_constraintStart_toEndOf="@+id/g1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPdtName"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPdtName"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="-93dp"
+            tools:listitem="@layout/row_item_today_my_order" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

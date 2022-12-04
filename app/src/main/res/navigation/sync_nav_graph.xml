@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sync_nav_graph"
+    app:startDestination="@id/syncFragment">
+
+    <fragment
+        android:id="@+id/syncFragment"
+        android:name="com.espy.roohtour.ui.sync.view.SyncFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_sync">
+    </fragment>
+</navigation>

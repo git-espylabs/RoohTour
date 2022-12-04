@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.espy.roohtour.ui.order.view.OrderViewModel" />
+
+        <variable
+            name="viewParent"
+            type="com.espy.roohtour.ui.order.view.ProductsPreviewFragment" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoryList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spanCount = "2"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_item_categories_list"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/etSearch"
+            app:layout_constraintTop_toBottomOf="@+id/categoryList"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="Search Product"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/avenir_light"
+            android:background="@drawable/bg_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"/>
+
+        <ImageView
+            android:id="@+id/iconsearch"
+            app:layout_constraintTop_toTopOf="@+id/etSearch"
+            app:layout_constraintBottom_toBottomOf="@+id/etSearch"
+            app:layout_constraintStart_toStartOf="@+id/etSearch"
+            app:layout_constraintEnd_toEndOf="@+id/etSearch"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="9dp"
+            app:spanCount = "2"
+            app:layout_constraintTop_toBottomOf="@+id/etSearch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/row_item_product_preview_list"/>
+
+        <com.andremion.counterfab.CounterFab
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintVertical_bias="0.95"
+            android:id="@+id/cartFab"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            android:backgroundTint="@color/app_accent_color"
+            app:badgeBackgroundColor="@color/fab_badge_bg"
+            app:badgePosition="RightTop"
+            app:badgeTextColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cart" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

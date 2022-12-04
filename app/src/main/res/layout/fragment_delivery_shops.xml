@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.espy.roohtour.ui.shops.view.ShopsViewModel" />
+
+        <variable
+            name="viewParent"
+            type="com.espy.roohtour.ui.shops.view.DeliveryShopsFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g1"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.60"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/srch"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="Search Agency"
+            android:paddingLeft="9dp"
+            android:fontFamily="@font/avenir_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/bg_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"/>
+
+        <TextView
+            android:id="@+id/filterDateFrom"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:hint="From Date"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/avenir_medium"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/srch"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/bg_edittext"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"/>
+
+        <TextView
+            android:id="@+id/filterDateTo"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:hint="To Date"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/avenir_medium"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/srch"
+            app:layout_constraintStart_toEndOf="@+id/tv1"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/bg_edittext"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"/>
+
+        <TextView
+            android:id="@+id/tv1"
+            app:layout_constraintTop_toTopOf="@+id/filterDateFrom"
+            app:layout_constraintBottom_toBottomOf="@+id/filterDateFrom"
+            app:layout_constraintStart_toEndOf="@+id/filterDateFrom"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/avenir_medium"
+            android:textSize="16sp"
+            android:text="To"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnShow"
+            app:layout_constraintTop_toTopOf="@+id/filterDateFrom"
+            app:layout_constraintBottom_toBottomOf="@+id/filterDateFrom"
+            app:layout_constraintStart_toEndOf="@+id/filterDateTo"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:fontFamily="@font/avenir_medium"
+            android:text="Show"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_cap_button"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"/>
+
+        <ImageView
+            android:id="@+id/icSrch"
+            app:layout_constraintTop_toTopOf="@+id/srch"
+            app:layout_constraintBottom_toBottomOf="@+id/srch"
+            app:layout_constraintStart_toStartOf="@+id/srch"
+            app:layout_constraintEnd_toEndOf="@+id/srch"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:src="@drawable/ic_search"
+            android:layout_marginRight="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvShopsList"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/filterDateFrom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            tools:listitem="@layout/row_item_delivery_shop_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

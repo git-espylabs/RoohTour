@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.espy.roohtour.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.espy.roohtour.ui.shops.view.ShopsFragment"
+        android:label="Shop"
+        tools:layout="@layout/fragment_shops">
+    </fragment>
+
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.espy.roohtour.ui.products.view.ProductsFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_products">
+    </fragment>
+
+    <fragment
+        android:id="@+id/addShopFragment"
+        android:name="com.espy.roohtour.ui.shops.view.AddShopFragment"
+        android:label="Add Agency"
+        tools:layout="@layout/fragment_add_shop">
+    </fragment>
+
+    <fragment
+        android:id="@+id/todayMyOrderFragment"
+        android:name="com.espy.roohtour.ui.products.view.TodayMyOrderFragment"
+        android:label="Today My Orders"
+        tools:layout="@layout/fragment_today_my_orders">
+    </fragment>
+
+</navigation>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="9dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/pdtImage"
+            app:shapeAppearanceOverlay="@style/roundedCornersImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@drawable/placeholder"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_width="148dp"
+            android:layout_height="132dp"/>
+
+        <TextView
+            android:id="@+id/pdtName"
+            app:layout_constraintTop_toBottomOf="@+id/pdtImage"
+            app:layout_constraintStart_toStartOf="@+id/pdtImage"
+            app:layout_constraintEnd_toEndOf="@+id/pdtImage"
+            android:layout_marginTop="7dp"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/avenir_medium"
+            tools:text="Godrej Washing Machine"
+            android:gravity="center|left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

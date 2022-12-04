@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.espy.roohtour.ui.home.HomeViewModel" />
+
+        <variable
+            name="viewParent"
+            type="com.espy.roohtour.ui.home.HomeActivity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.home.HomeActivity">
+
+        <include
+            android:id="@+id/toolbarHolder"
+            layout="@layout/toolbar_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@+id/btm_bar_bg"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarHolder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:navGraph="@navigation/home_nav_graph" />
+
+
+
+        <View
+            android:id="@+id/btm_bar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:background="@drawable/bg_custom_bottom_nav_bar"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/l1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            app:layout_constraintEnd_toStartOf="@+id/l2"
+            app:layout_constraintStart_toStartOf="@+id/btm_bar_bg"
+            app:layout_constraintTop_toTopOf="@+id/btm_bar_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/btm_bar_bg">
+
+            <ImageView
+                android:id="@+id/btnHome"
+                android:src="@drawable/ic_home"
+                android:layout_width="23dp"
+                android:layout_height="23dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/l2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/l3"
+            app:layout_constraintStart_toEndOf="@+id/l1"
+            app:layout_constraintTop_toTopOf="@+id/btm_bar_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/btm_bar_bg">
+
+            <ImageView
+                android:id="@+id/btnProduct"
+                android:src="@drawable/ic_product"
+                android:layout_width="23dp"
+                android:layout_height="23dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/l3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            app:layout_constraintEnd_toStartOf="@+id/l4"
+            app:layout_constraintStart_toEndOf="@+id/l2"
+            app:layout_constraintTop_toTopOf="@+id/btm_bar_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/btm_bar_bg">
+
+            <ImageView
+                android:id="@+id/btnShop"
+                android:src="@drawable/ic_shop"
+                android:layout_width="23dp"
+                android:layout_height="23dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/l4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:onClick="@{(view) -> viewParent.onClick(view)}"
+            app:layout_constraintEnd_toEndOf="@+id/btm_bar_bg"
+            app:layout_constraintStart_toEndOf="@+id/l3"
+            app:layout_constraintTop_toTopOf="@+id/btm_bar_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/btm_bar_bg">
+
+            <ImageView
+                android:id="@+id/btnMyOrders"
+                android:src="@drawable/ic_my_orders"
+                android:layout_width="23dp"
+                android:layout_height="23dp"/>
+
+        </LinearLayout>
+
+
+        <include
+            android:id="@+id/loadingView"
+            layout="@layout/infinite_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
