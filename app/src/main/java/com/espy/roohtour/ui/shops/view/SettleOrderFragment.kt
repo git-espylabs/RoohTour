@@ -85,7 +85,7 @@ class SettleOrderFragment:
                 (activity as OrderHistoryActivity).showProgress()
                 shopsViewModel.followUpEnquiry(
                     args.deliveryShop?.agency_id?:"0",
-                    args.pendingorder?.comment?:"0",
+                    args.pendingorder?.enquiry_id?:"0",
                     selectedDateFollowUp,
                     confirmationStatus,
                     selectedDateAmmend,
@@ -101,6 +101,7 @@ class SettleOrderFragment:
         shopsViewModel.followupRes.observe(viewLifecycleOwner) {
             (activity as OrderHistoryActivity).hideProgress()
             if (it is Result.Success && it.data == 1) {
+                showToast("Follow Up Success!")
                 (requireActivity() as OrderHistoryActivity).onBackPressed()
             } else {
                 showToast("Follow Up failed! Contact Admin")

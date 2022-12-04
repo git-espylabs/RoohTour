@@ -28,4 +28,6 @@ data class EnquiryItem(
     var recieve_date: String? = "",
     @SerialName("agency_name")
     var agency_name: String? = "",
+    @SerialName("enquiry_id")
+    var enquiry_id: String? = "",
 ): Parcelable
