@@ -43,7 +43,7 @@
         tools:layout="@layout/fragment_setle_order">
         <argument
             android:name="pendingorder"
-            app:argType="com.espy.roohtour.api.models.shops.PendingOrder"
+            app:argType="com.espy.roohtour.api.models.shops.EnquiryItem"
             app:nullable="true"
             android:defaultValue="@null" />
         <argument

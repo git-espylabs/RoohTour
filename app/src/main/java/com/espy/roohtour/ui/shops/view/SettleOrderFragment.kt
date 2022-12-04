@@ -1,25 +1,34 @@
 package com.espy.roohtour.ui.shops.view
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.View
+import android.widget.RadioGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.espy.roohtour.R
 import com.espy.roohtour.api.Result
-import com.espy.roohtour.api.models.shops.OrderItem
 import com.espy.roohtour.databinding.FragmentSetleOrderBinding
-import com.espy.roohtour.extensions.sumBy
 import com.espy.roohtour.ui.base.BaseFragmentWithBinding
 import com.espy.roohtour.ui.shops.adapter.OrderItemListAdapter
+import com.espy.roohtour.utils.CommonUtils
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 class SettleOrderFragment:
     BaseFragmentWithBinding<FragmentSetleOrderBinding>(R.layout.fragment_setle_order) {
 
     private val shopsViewModel: ShopsViewModel by activityViewModels()
     private val args: SettleOrderFragmentArgs by navArgs()
-    private var orderItemListAdapter: OrderItemListAdapter? = null
+    val DATE_FORMAT = "dd MMM yyyy"
+    val DATE_FORMAT_SERVER = "yyyy-MM-dd"
+
+    var selectedDateFollowUp = "";
+    var selectedDateAmmend = "";
+    var confirmationStatus = "0"
+    var notes = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,65 +38,101 @@ class SettleOrderFragment:
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        (activity as OrderHistoryActivity).setToolBarProperties("Follow Up", false)
+        selectedDateFollowUp = SimpleDateFormat(DATE_FORMAT_SERVER, Locale.US).format(Calendar.getInstance().time)
+        selectedDateAmmend = SimpleDateFormat(DATE_FORMAT_SERVER, Locale.US).format(Calendar.getInstance().time)
+
         binding.apply {
             viewModel = shopsViewModel
-//            (activity as OrderHistoryActivity).setToolBarProperties(args.deliveryShop?.shop_name?:getString(R.string.order_history), false)
 
-            shAddress.text = "Address: " + args.deliveryShop?.shop_address?:""
-            //shGst.text = "GST Number: " + args.deliveryShop?.shop_regi_no?:"0"
+            dot.text = "Date Of Travel: " + CommonUtils.getConvertedDate2(args.pendingorder?.date_of_travel?:"") + ", "
+            destiny.text = "Destination: " + args.pendingorder?.destination
+            tvComt.text = "Comment: " + args.pendingorder?.comment
+            tvAdultCount.text = "Adults: " + args.pendingorder?.adult + ", "
+            tvAChildCount.text = "Children: " + args.pendingorder?.child + ", "
+            tvDuration.text = "Duration: " + args.pendingorder?.duration
+            tvQuotation.text = "Quotation: " + args.pendingorder?.quotation_amount + ", "
+            tvReminder.text = "Reminder On: " + CommonUtils.getConvertedDate2(args.pendingorder?.reminder_date?:"")
+            tvNotes.text = "Notes: " + args.pendingorder?.notes
+            tvReceiveDate.text = "Receive On: " + CommonUtils.getConvertedDate2(args.pendingorder?.recieve_date?:"")
+
+            followupDate.also {
+                it.text = SimpleDateFormat(DATE_FORMAT, Locale.US).format(Calendar.getInstance().time)
+                it.setOnClickListener {
+                    showDatePickerDialog(1)
+                }
+            }
+            ammendDate.also {
+                it.text = SimpleDateFormat(DATE_FORMAT, Locale.US).format(Calendar.getInstance().time)
+                it.setOnClickListener {
+                    showDatePickerDialog(2)
+                }
+            }
+
+
+            rgConfirmStatus.setOnCheckedChangeListener { _, checkedId ->
+                when (checkedId) {
+                    R.id.rbStatusWhite -> confirmationStatus = "0"
+                    R.id.rbStatusGreen -> confirmationStatus = "1"
+                    R.id.rbStatusBlue -> confirmationStatus = "2"
+                    R.id.rbStatusYellow -> confirmationStatus = "3"
+                    R.id.rbStatusRed -> confirmationStatus = "4"
+                }
+            }
+
+            btnFollowup.setOnClickListener {
+                notes = etNotes.text.toString()
+                (activity as OrderHistoryActivity).showProgress()
+                shopsViewModel.followUpEnquiry(
+                    args.deliveryShop?.agency_id?:"0",
+                    args.pendingorder?.comment?:"0",
+                    selectedDateFollowUp,
+                    confirmationStatus,
+                    selectedDateAmmend,
+                    notes
+                )
+            }
         }
 
-        //binding.invNo.text = "Invoice Number: " + args.deliveryShop?.invoice_id
-
         setObservers()
-
-        (activity as OrderHistoryActivity).showProgress()
-        shopsViewModel.getPendingOrderItems(args.pendingorder?.id?:"0")
     }
 
     private fun setObservers(){
-        shopsViewModel.orderItemsList.observe(viewLifecycleOwner) {
+        shopsViewModel.followupRes.observe(viewLifecycleOwner) {
             (activity as OrderHistoryActivity).hideProgress()
-            if (it is Result.Success && it.data.any()) {
-                loadOrderItems(it.data)
+            if (it is Result.Success && it.data == 1) {
+                (requireActivity() as OrderHistoryActivity).onBackPressed()
             } else {
-                showToast("No products found!")
+                showToast("Follow Up failed! Contact Admin")
             }
         }
     }
 
-    private fun loadOrderItems(list: List<OrderItem>){
-        orderItemListAdapter = OrderItemListAdapter(requireContext(), list){
 
-        }.apply {
-            notifyDataSetChanged()
-        }
 
-        binding.rvDetailList.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            adapter = orderItemListAdapter
-            setHasFixedSize(false)
-        }
-        updateSummary(list)
-    }
+    private fun showDatePickerDialog(dateType: Int){
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
 
-    private fun updateSummary(list: List<OrderItem>){
-        list.sumBy { item ->
-            item?.run {
-                total_amount.toFloat()
-            }?: run {
-                0F
+
+        DatePickerDialog(requireActivity(), { _, year, monthOfYear, dayOfMonth ->
+            c.set(Calendar.YEAR, year)
+            c.set(Calendar.MONTH, monthOfYear)
+            c.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+            if (dateType == 1) {
+                binding.followupDate.text = SimpleDateFormat(DATE_FORMAT, Locale.US).format(c.time)
+                selectedDateFollowUp = SimpleDateFormat(DATE_FORMAT_SERVER, Locale.US).format(c.time)
+            } else {
+                binding.ammendDate.text = SimpleDateFormat(DATE_FORMAT, Locale.US).format(c.time)
+                selectedDateAmmend = SimpleDateFormat(DATE_FORMAT_SERVER, Locale.US).format(c.time)
             }
-        }.apply {
-            binding.also {
-                it.grandTotal.text = requireContext().getString(R.string.amount_rep_float, this)
-                it.itemTotal.text = list.size.toString()
-            }
-        }
+        }, year, month, day).show()
     }
 
     override fun onPause() {
         super.onPause()
-        shopsViewModel._orderItemsList = MutableLiveData()
+        shopsViewModel._followupRes = MutableLiveData()
     }
 }

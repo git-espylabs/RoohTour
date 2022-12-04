@@ -71,10 +71,10 @@ class PendingOrdersFragment:
 
     private fun loadOrders(list: List<EnquiryItem>){
         pendingOrderListAdapter = PendingOrderListAdapter(requireContext(), list){ item ->
-            /*val action = pendingOrder?.let {
+            val action = item.let {
                 PendingOrdersFragmentDirections.actionPendingOrderFragmentToSettleOrderFragment(it, args.deliveryShop)
             }
-            action?.let { findNavController().navigate(it) }*/
+            action.let { findNavController().navigate(it) }
         }.apply {
             notifyDataSetChanged()
         }
@@ -99,10 +99,10 @@ class PendingOrdersFragment:
                     it.id == (parent.getItemAtPosition(position) as PendingOrder).id
                 }?.run {
 
-                    val action = this?.let {
+                    /*val action = this?.let {
                         PendingOrdersFragmentDirections.actionPendingOrderFragmentToSettleOrderFragment(it)
                     }
-                    action?.let { findNavController().navigate(it) }
+                    action?.let { findNavController().navigate(it) }*/
                 }
             }
 

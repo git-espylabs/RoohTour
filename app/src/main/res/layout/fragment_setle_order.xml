@@ -11,187 +11,474 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_margin="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <TextView
+                android:id="@+id/dot"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:text="Date of travel"
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/destiny"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="Destination "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvComt"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="Comment: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/destiny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvAdultCount"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="No Of Adults: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvComt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvAChildCount"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@+id/tvAdultCount"
+                android:textColor="@color/black"
+                android:text="No Of Children: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvComt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvDuration"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@+id/tvAChildCount"
+                android:textColor="@color/black"
+                android:text="Duration: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvComt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvQuotation"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="Quotation: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvAChildCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvReminder"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@+id/tvQuotation"
+                android:textColor="@color/black"
+                android:text="Reminder On: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvAChildCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvReceiveDate"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@+id/dot"
+                android:textColor="@color/black"
+                android:text="Receive On: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvNotes"
+                android:layout_marginTop="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:text="Notes: "
+                android:fontFamily="@font/avenir_medium"
+                app:layout_constraintTop_toBottomOf="@+id/tvReminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:id="@+id/sep1"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvNotes"
+                android:layout_width="match_parent"
+                android:background="@color/grey_100"
+                android:layout_height="1dp"/>
+
+
+
+            <TextView
+                android:id="@+id/tv1"
+                app:layout_constraintTop_toTopOf="@+id/followupDate"
+                app:layout_constraintBottom_toBottomOf="@+id/followupDate"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_medium"
+                android:textSize="16sp"
+                android:text="Select Followup Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/followupDate"
+                android:layout_marginTop="16dp"
+                android:hint="Followup Date"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_medium"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/sep1"
+                app:layout_constraintStart_toEndOf="@+id/tv1"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/bg_edittext"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="39dp"/>
+
+
+
+            <TextView
+                android:id="@+id/tv2"
+                app:layout_constraintTop_toTopOf="@+id/ammendDate"
+                app:layout_constraintBottom_toBottomOf="@+id/ammendDate"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_medium"
+                android:textSize="16sp"
+                android:text="Select Amendment Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/ammendDate"
+                android:layout_marginTop="16dp"
+                android:hint="Amendment Date"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_medium"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/followupDate"
+                app:layout_constraintStart_toEndOf="@+id/tv2"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/bg_edittext"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="39dp"/>
+
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/ammendDate"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_medium"
+                android:textSize="16sp"
+                android:text="Select Confirmation status:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RadioGroup
+                android:id="@+id/rgConfirmStatus"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.35"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rbStatusWhite"
+                    android:text="Enquiry Level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rbStatusYellow"
+                    android:text="Medium  chance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rbStatusBlue"
+                    android:text="High  Chance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rbStatusGreen"
+                    android:text="Confirmed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rbStatusRed"
+                    android:text="Dropped"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/rgConfirmStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_medium"
+                android:textSize="16sp"
+                android:text="Notes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/etNotes"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv4"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_simple_text_bg_orange_stroke"
+                android:lines="5"
+                android:maxLines="5"
+                android:gravity="start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnFollowup"
+                android:layout_width="0dp"
+                android:layout_height="39dp"
+                android:background="@drawable/bg_simple_text_bg_orange_fill"
+                android:fontFamily="@font/avenir_medium"
+                android:text="Follow Up"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_marginTop="24dp"
+                android:layout_marginHorizontal="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/etNotes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+
+            <!--
+            <TextView
+                android:id="@+id/shAddress"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/g1"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_heavy"
+                android:text="Address: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/shGst"
+                app:layout_constraintTop_toBottomOf="@+id/shAddress"
+                app:layout_constraintStart_toStartOf="@+id/g1"
+                android:layout_marginTop="7dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_heavy"
+                android:text="GST: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/orderNo"
+                app:layout_constraintTop_toBottomOf="@+id/shGst"
+                app:layout_constraintStart_toStartOf="@+id/g1"
+                android:layout_marginTop="18dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_medium"
+                android:text="Order Number: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
 
         <TextView
-            android:id="@+id/shAddress"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/g1"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/avenir_heavy"
-            android:text="Address: "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-        <TextView
-            android:id="@+id/shGst"
-            app:layout_constraintTop_toBottomOf="@+id/shAddress"
+            android:id="@+id/invNo"
+            app:layout_constraintTop_toBottomOf="@+id/orderNo"
             app:layout_constraintStart_toStartOf="@+id/g1"
             android:layout_marginTop="7dp"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/avenir_heavy"
-            android:text="GST: "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-        <TextView
-            android:id="@+id/orderNo"
-            app:layout_constraintTop_toBottomOf="@+id/shGst"
-            app:layout_constraintStart_toStartOf="@+id/g1"
-            android:layout_marginTop="18dp"
             android:textSize="16sp"
             android:textColor="@color/black"
             android:fontFamily="@font/avenir_medium"
-            android:text="Order Number: "
+            android:text="Invoice Number: "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/g1"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
 
-    <TextView
-        android:id="@+id/invNo"
-        app:layout_constraintTop_toBottomOf="@+id/orderNo"
-        app:layout_constraintStart_toStartOf="@+id/g1"
-        android:layout_marginTop="7dp"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/avenir_medium"
-        android:text="Invoice Number: "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/g2"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g1"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.05"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/g3"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g2"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.6"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/titPdt"
+                app:layout_constraintTop_toBottomOf="@+id/invNo"
+                app:layout_constraintStart_toStartOf="@+id/g1"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/app_accent_color"
+                android:textSize="14sp"
+                android:text="Product"
+                android:fontFamily="@font/avenir_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g3"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.8"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/titQty"
+                app:layout_constraintTop_toBottomOf="@+id/invNo"
+                app:layout_constraintStart_toStartOf="@+id/g2"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/app_accent_color"
+                android:textSize="14sp"
+                android:text="Quantity"
+                android:fontFamily="@font/avenir_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/titPdt"
-            app:layout_constraintTop_toBottomOf="@+id/invNo"
-            app:layout_constraintStart_toStartOf="@+id/g1"
-            android:layout_marginTop="12dp"
-            android:textColor="@color/app_accent_color"
-            android:textSize="14sp"
-            android:text="Product"
-            android:fontFamily="@font/avenir_medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/titPrice"
+                app:layout_constraintTop_toBottomOf="@+id/invNo"
+                app:layout_constraintStart_toStartOf="@+id/g3"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/app_accent_color"
+                android:textSize="14sp"
+                android:text="Price"
+                android:fontFamily="@font/avenir_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/titQty"
-            app:layout_constraintTop_toBottomOf="@+id/invNo"
-            app:layout_constraintStart_toStartOf="@+id/g2"
-            android:layout_marginTop="12dp"
-            android:textColor="@color/app_accent_color"
-            android:textSize="14sp"
-            android:text="Quantity"
-            android:fontFamily="@font/avenir_medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDetailList"
+                app:layout_constraintTop_toBottomOf="@+id/titPdt"
+                app:layout_constraintBottom_toTopOf="@+id/grandTotal"
+                android:layout_marginBottom="8dp"
+                tools:listitem="@layout/row_item_order_item_history_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
 
-        <TextView
-            android:id="@+id/titPrice"
-            app:layout_constraintTop_toBottomOf="@+id/invNo"
-            app:layout_constraintStart_toStartOf="@+id/g3"
-            android:layout_marginTop="12dp"
-            android:textColor="@color/app_accent_color"
-            android:textSize="14sp"
-            android:text="Price"
-            android:fontFamily="@font/avenir_medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/grandTotal"
+                tools:text="₹ 18000"
+                android:layout_marginBottom="12dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_heavy"
+                android:layout_marginRight="16dp"
+                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvDetailList"
-            app:layout_constraintTop_toBottomOf="@+id/titPdt"
-            app:layout_constraintBottom_toTopOf="@+id/grandTotal"
-            android:layout_marginBottom="8dp"
-            tools:listitem="@layout/row_item_order_item_history_list"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"/>
+            <TextView
+                android:id="@+id/promptGTotal"
+                android:text="Grand Total"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_light"
+                android:layout_marginRight="12dp"
+                app:layout_constraintTop_toTopOf="@+id/grandTotal"
+                app:layout_constraintBottom_toBottomOf="@+id/grandTotal"
+                app:layout_constraintEnd_toStartOf="@+id/grandTotal"
+                app:layout_constraintHorizontal_bias="1.0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/grandTotal"
-            tools:text="₹ 18000"
-            android:layout_marginBottom="12dp"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/avenir_heavy"
-            android:layout_marginRight="16dp"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/promptItemTotal"
+                android:text="Items"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_light"
+                android:layout_marginRight="16dp"
+                app:layout_constraintTop_toTopOf="@+id/grandTotal"
+                app:layout_constraintBottom_toBottomOf="@+id/grandTotal"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintHorizontal_bias="1.0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/promptGTotal"
-            android:text="Grand Total"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/avenir_light"
-            android:layout_marginRight="12dp"
-            app:layout_constraintTop_toTopOf="@+id/grandTotal"
-            app:layout_constraintBottom_toBottomOf="@+id/grandTotal"
-            app:layout_constraintEnd_toStartOf="@+id/grandTotal"
-            app:layout_constraintHorizontal_bias="1.0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/promptItemTotal"
-            android:text="Items"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/avenir_light"
-            android:layout_marginRight="16dp"
-            app:layout_constraintTop_toTopOf="@+id/grandTotal"
-            app:layout_constraintBottom_toBottomOf="@+id/grandTotal"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="16dp"
-            app:layout_constraintHorizontal_bias="1.0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/itemTotal"
-            tools:text="5"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/avenir_heavy"
-            android:layout_marginLeft="12dp"
-            app:layout_constraintTop_toTopOf="@+id/grandTotal"
-            app:layout_constraintBottom_toBottomOf="@+id/grandTotal"
-            app:layout_constraintStart_toEndOf="@+id/promptItemTotal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/itemTotal"
+                tools:text="5"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/avenir_heavy"
+                android:layout_marginLeft="12dp"
+                app:layout_constraintTop_toTopOf="@+id/grandTotal"
+                app:layout_constraintBottom_toBottomOf="@+id/grandTotal"
+                app:layout_constraintStart_toEndOf="@+id/promptItemTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>-->
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </layout>

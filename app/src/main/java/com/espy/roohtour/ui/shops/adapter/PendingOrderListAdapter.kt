@@ -21,6 +21,7 @@ class PendingOrderListAdapter internal constructor(private val context: Context,
         internal var destiny: TextView = itemView.findViewById(R.id.destiny)
         internal var tvAdultCount: TextView = itemView.findViewById(R.id.tvAdultCount)
         internal var tvAChildCount: TextView = itemView.findViewById(R.id.tvAChildCount)
+        internal var tvComt: TextView = itemView.findViewById(R.id.tvComt)
         internal var tvDuration: TextView = itemView.findViewById(R.id.tvDuration)
         internal var tvQuotation: TextView = itemView.findViewById(R.id.tvQuotation)
         internal var tvReminder: TextView = itemView.findViewById(R.id.tvReminder)
@@ -46,6 +47,7 @@ class PendingOrderListAdapter internal constructor(private val context: Context,
         holder.tvReminder.text = "Reminder Date: " + CommonUtils.getConvertedDate2(data.reminder_date?:"")
         holder.tvNotes.text = "Notes: " + data.notes
         holder.tvReceiveDate.text = "Receive Date: " + CommonUtils.getConvertedDate2(data.recieve_date?:"")
+        holder.tvComt.text = "Notes: " + data.comment
 
         holder.btnFollowup.setOnClickListener {
             clickHandler(data)

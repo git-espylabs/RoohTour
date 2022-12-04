@@ -13,7 +13,6 @@ import com.espy.roohtour.preference.AppPreferences
 import com.espy.roohtour.ui.products.models.TodayMyOrder
 import com.espy.roohtour.ui.shops.models.NewShopMultiPartData
 import com.espy.roohtour.ui.shops.models.ShopPayHistory
-import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
@@ -391,6 +390,30 @@ class ShopRepository: BaseRepository() {
 
             if (response.data.any()){
                 Result.Success(response.data)
+            }else{
+                Result.Error(Exception("error"))
+            }
+        } catch (e: Exception) {
+            Result.Error(e)
+        }
+    }
+
+    suspend fun followUpEnquiry(
+        agency_id: String,
+        enquiry_id: String,
+        followup_date: String,
+        confirm_chance: String,
+        amendment_replied_date: String,
+        notes: String
+    ): Result<Int> {
+        return try {
+            val response = RestServiceProvider
+                .getShopService()
+                .followupEnquiryAsync(FollowupEnquiryRequest(agency_id, enquiry_id, followup_date, confirm_chance, amendment_replied_date, notes))
+                .await()
+
+            if (response.data != 0){
+                Result.Success(response.data as Int)
             }else{
                 Result.Error(Exception("error"))
             }

@@ -12,7 +12,7 @@ object RestServiceProvider {
 
     private val capServiceFactory: NetworkServiceFactory
 
-    private var logLevel: HttpLoggingInterceptor.Level = HttpLoggingInterceptor.Level.NONE
+    private var logLevel: HttpLoggingInterceptor.Level = HttpLoggingInterceptor.Level.BODY
 
     private val callAdapterFactory = CoroutineCallAdapterFactory()
 
