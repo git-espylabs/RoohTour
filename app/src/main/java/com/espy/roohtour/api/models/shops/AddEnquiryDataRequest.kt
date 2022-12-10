@@ -5,6 +5,10 @@ import com.google.gson.annotations.SerializedName
 data class AddEnquiryDataRequest(
     @SerializedName("agency_id")
     var agency_id: String = "",
+
+    @SerializedName("staff_login_id")
+    var staff_login_id: String = "",
+
     @SerializedName("destination")
     var destination: String = "",
 

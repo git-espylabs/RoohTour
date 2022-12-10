@@ -268,8 +268,19 @@ class ShopsViewModel : BaseViewModel() {
                     quotation_amt:String?,
                     reminder_date:String?,
                     notes:String?){
-        val addenqRequest = AddEnquiryDataRequest(agencyId,
-            destination,dateoftravel!!,comment!!,adult!!,child!!,duration!!,quotation_amt!!,reminder_date!!,notes!!)
+        val addenqRequest = AddEnquiryDataRequest(
+            agencyId,
+            AppPreferences.userId,
+            destination,
+            dateoftravel?:"0",
+            comment?:"0",
+            adult?:"0",
+            child?:"0",
+            duration?:"0",
+            quotation_amt?:"0",
+            reminder_date?:"0",
+            notes!!
+        )
         viewModelScope.launch {
             shopRepository.addEnquirys(addenqRequest).collect {
                 _addenqResponse.value = it
