@@ -70,11 +70,18 @@ class PendingOrdersFragment:
     }
 
     private fun loadOrders(list: List<EnquiryItem>){
-        pendingOrderListAdapter = PendingOrderListAdapter(requireContext(), list){ item ->
-            val action = item.let {
-                PendingOrdersFragmentDirections.actionPendingOrderFragmentToSettleOrderFragment(it, args.deliveryShop)
+        pendingOrderListAdapter = PendingOrderListAdapter(requireContext(), list){ item, type ->
+            if (type == 1) {
+                val action = item.let {
+                    PendingOrdersFragmentDirections.actionPendingOrderFragmentToSettleOrderFragment(it, args.deliveryShop)
+                }
+                action.let { findNavController().navigate(it) }
+            } else {
+                val action = item.let {
+                    PendingOrdersFragmentDirections.actionPendingOrderFragmentToFollowupHistoryFragment(it.enquiry_id, args.deliveryShop?.agency_id)
+                }
+                action.let { findNavController().navigate(it) }
             }
-            action.let { findNavController().navigate(it) }
         }.apply {
             notifyDataSetChanged()
         }

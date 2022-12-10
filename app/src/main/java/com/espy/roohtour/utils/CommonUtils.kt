@@ -104,9 +104,13 @@ object CommonUtils {
         } ?: ""
 
     fun getConvertedDate2(dateString: String): String =
-        SimpleDateFormat(serverTimeFormat2, Locale.US).parse(dateString)?.let {
-            SimpleDateFormat("dd MMM yyyy", Locale.US).format(it)
-        } ?: ""
+        try {
+            SimpleDateFormat(serverTimeFormat2, Locale.US).parse(dateString)?.let {
+                SimpleDateFormat("dd MMM yyyy", Locale.US).format(it)
+            } ?: "--"
+        } catch (e: Exception) {
+            "--"
+        }
 
 
 }

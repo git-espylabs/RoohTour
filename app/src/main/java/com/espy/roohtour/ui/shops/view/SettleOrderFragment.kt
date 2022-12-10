@@ -38,7 +38,7 @@ class SettleOrderFragment:
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (activity as OrderHistoryActivity).setToolBarProperties("Follow Up", false)
+        (activity as OrderHistoryActivity).setToolBarProperties("Add Follow Up", false)
         selectedDateFollowUp = SimpleDateFormat(DATE_FORMAT_SERVER, Locale.US).format(Calendar.getInstance().time)
         selectedDateAmmend = SimpleDateFormat(DATE_FORMAT_SERVER, Locale.US).format(Calendar.getInstance().time)
 

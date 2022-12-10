@@ -12,7 +12,7 @@ import com.espy.roohtour.api.models.shops.EnquiryItem
 import com.espy.roohtour.api.models.shops.PendingOrder
 import com.espy.roohtour.utils.CommonUtils
 
-class PendingOrderListAdapter internal constructor(private val context: Context, private val mData: List<EnquiryItem>, val clickHandler: (order: EnquiryItem) -> Unit) : RecyclerView.Adapter<PendingOrderListAdapter.ViewHolder>()  {
+class PendingOrderListAdapter internal constructor(private val context: Context, private val mData: List<EnquiryItem>, val clickHandler: (order: EnquiryItem, type: Int) -> Unit) : RecyclerView.Adapter<PendingOrderListAdapter.ViewHolder>()  {
 
     private val mInflater: LayoutInflater = LayoutInflater.from(context)
 
@@ -28,6 +28,7 @@ class PendingOrderListAdapter internal constructor(private val context: Context,
         internal var tvReceiveDate: TextView = itemView.findViewById(R.id.tvReceiveDate)
         internal var tvNotes: TextView = itemView.findViewById(R.id.tvNotes)
         internal var btnFollowup: Button = itemView.findViewById(R.id.btnFollowup)
+        internal var btnFollowupHistory: Button = itemView.findViewById(R.id.btnFollowupHistory)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -50,7 +51,11 @@ class PendingOrderListAdapter internal constructor(private val context: Context,
         holder.tvComt.text = "Notes: " + data.comment
 
         holder.btnFollowup.setOnClickListener {
-            clickHandler(data)
+            clickHandler(data, 1)
+        }
+
+        holder.btnFollowupHistory.setOnClickListener {
+            clickHandler(data, 2)
         }
     }
 

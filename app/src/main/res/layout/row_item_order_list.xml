@@ -133,17 +133,34 @@
             <Button
                 android:id="@+id/btnFollowup"
                 android:layout_width="0dp"
-                android:layout_height="39dp"
+                android:layout_height="49dp"
+                android:gravity="center"
                 android:background="@drawable/bg_simple_text_bg_orange_fill"
                 android:fontFamily="@font/avenir_medium"
-                android:text="Follow Up"
+                android:text="Add\nFollow Up"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_marginTop="9dp"
+                android:layout_marginHorizontal="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvNotes"
+                app:layout_constraintEnd_toStartOf="@+id/btnFollowupHistory"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <Button
+                android:id="@+id/btnFollowupHistory"
+                android:layout_width="0dp"
+                android:layout_height="49dp"
+                android:gravity="center"
+                android:background="@drawable/bg_simple_text_bg_orange_fill"
+                android:fontFamily="@font/avenir_medium"
+                android:text="Follow Up\nHistory"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:layout_marginTop="9dp"
                 android:layout_marginHorizontal="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/tvNotes"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toEndOf="@+id/btnFollowup"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

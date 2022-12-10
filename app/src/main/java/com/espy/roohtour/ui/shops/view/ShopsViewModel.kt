@@ -93,6 +93,11 @@ class ShopsViewModel : BaseViewModel() {
         get() = _followupRes
 
 
+    var _followupHistory: MutableLiveData<com.espy.roohtour.api.Result<List<FollowupHistoryItem>>> = MutableLiveData()
+    val followupHistory: LiveData<com.espy.roohtour.api.Result<List<FollowupHistoryItem>>>
+        get() = _followupHistory
+
+
     fun postFeedBack(feedback: String, description: String, location: Location?){
         val feedbackRequest = FeedbackRequest(feedback, description, AppPreferences.userId, shopId, location?.latitude?.toString()?:"0.0", location?.longitude?.toString()?:"0.0")
         viewModelScope.launch {
@@ -300,6 +305,14 @@ class ShopsViewModel : BaseViewModel() {
         viewModelScope.launch {
             shopRepository.followUpEnquiry(agency_id, enquiry_id, followup_date, confirm_chance, amendment_replied_date, notes).let {
                 _followupRes.value = it
+            }
+        }
+    }
+
+    fun getFollowupHistory(agencyId: String, enquiry_id: String){
+        viewModelScope.launch {
+            shopRepository.getFollowupHistory(enquiry_id, agencyId).let {
+                _followupHistory.value = it
             }
         }
     }

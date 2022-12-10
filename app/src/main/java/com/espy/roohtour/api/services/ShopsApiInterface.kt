@@ -138,4 +138,10 @@ interface ShopsApiInterface {
         @Body followupEnquiryRequest: FollowupEnquiryRequest
     ): Deferred<FollowupResponse>
 
+    //enquiry followup history
+    @POST(HttpEndPoints.ROOH_ENQUIRY_FOLLOW_UP_HISTORY)
+    fun followupEnquiryHistoryAsync(
+        @Body followupHistoryRequest: FollowupHistoryRequest
+    ): Deferred<FollowupHistoryResponse>
+
 }

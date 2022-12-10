@@ -421,4 +421,21 @@ class ShopRepository: BaseRepository() {
             Result.Error(e)
         }
     }
+
+    suspend fun getFollowupHistory(agencyId: String, enquiry_id: String): Result<List<FollowupHistoryItem>> {
+        return try {
+            val response = RestServiceProvider
+                .getShopService()
+                .followupEnquiryHistoryAsync(FollowupHistoryRequest(enquiry_id, agencyId))
+                .await()
+
+            if (response.data.any()){
+                Result.Success(response.data)
+            }else{
+                Result.Error(Exception("error"))
+            }
+        } catch (e: Exception) {
+            Result.Error(e)
+        }
+    }
 }

@@ -49,6 +49,7 @@ internal class HttpEndPoints {
         const val ROOH_ENQUIRY_AGENCY_LIST = "api/enquiry_in_agencies"
         const val ROOH_ENQUIRY_LIST_OF_AGENCY = "api/agency_enquiries_list"
         const val ROOH_ENQUIRY_FOLLOW_UP = "api/create_enquiry_followup"
+        const val ROOH_ENQUIRY_FOLLOW_UP_HISTORY = "api/enquiry_followups"
     }
 
 }
